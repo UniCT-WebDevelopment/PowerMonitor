@@ -1,0 +1,41 @@
+<%- include("header") %>
+
+<div class="controls_container">
+	<div class="controls_subcontainer" id="from_to">
+		<div> <b>Dal</b> <input type="datetime-local" id="from"> </div>
+		<div> <b>Al</b> <input type="datetime-local" id="to"> </div>
+	</div>
+
+	<div class="controls_subcontainer">
+		<div>
+			<b> Raggruppa dati per </b>
+			<select id="group_by">
+				<option value="d">Giorni</option>
+				<option value="h">Ore</option>
+				<option value="m">Minuti</option>
+				<option value="s" selected>Secondi</option>
+			</select>
+		</div>
+
+		<div id="kWh"> <b>Consumo calcolato:</b> <span>0.00</span>kWh </div>
+	</div>
+	
+	<div class="controls_subcontainer" id="model_actions">
+		<b> Opzioni modello </b>
+		<div class="button" id="train_button"> Train </div>
+		<div class="button" id="tune_button"> Fine-tuning </div>
+	</div>
+
+	<div class="controls_subcontainer">
+		<div class="button print" id="update_button"> Aggiorna </div>
+		<div id="loading"></div>
+	</div>
+</div>
+
+<% Array("power", "pf", "vi").forEach(e => { %>
+	<div class="chart_container">
+		<canvas id="<%= e %>_chart"></canvas>
+	</div>
+<% }) %>
+
+<%- include("footer") %>

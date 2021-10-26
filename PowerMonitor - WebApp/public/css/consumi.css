@@ -1,0 +1,79 @@
+.chart_container, .controls_container{
+	width: 1280px;
+}
+
+.chart_container{
+	border: 1px solid var(--border);
+	background-color: var(--foreground);
+}
+
+.controls_container{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: 3rem;
+}
+
+.controls_subcontainer{
+	min-height: 4rem;
+
+	border: 3px solid var(--menu_selected);
+	border-radius: 10px;
+
+	padding: 10px;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 6px;
+}
+
+.controls_subcontainer .button{
+	font-size: .9rem;
+}
+
+#from_to{
+	align-items: flex-end;
+}
+
+#loading{
+	width: 4rem;
+	height: 2rem;
+
+	background-image: url("/img/loading.gif");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+
+	display: none;
+}
+
+@media screen and (max-width: 1360px){
+	.chart_container, .controls_container{
+		width: 1024px;
+	}
+}
+
+@media screen and (max-width: 1104px){
+	.chart_container, .controls_container{
+		width: 800px;
+	}
+}
+
+@media screen and (max-width: 880px){
+	.chart_container, .controls_container{
+		width: 640px;
+	}
+
+	.controls_container{
+		flex-direction: column;
+	}
+}
+
+@media screen and (max-width: 720px){
+	.chart_container, .controls_container{
+		width: 90vw;
+	}
+}

@@ -1,0 +1,159 @@
+a{
+	color: var(--primary_font);
+}
+
+.container{
+	padding: 2rem;
+
+	color: var(--primary_font);
+
+	flex-wrap: wrap;
+	flex-direction: row;
+	justify-content: flex-start;
+}
+
+.device, .clickable{
+	width: 250px;
+	height: 250px;
+
+	box-sizing: border-box;
+	border-radius: 10px;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.device{
+	background-color: var(--foreground);
+	border: 3px solid var(--menu_selected);
+}
+
+.device .title{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 6px;
+}
+
+.device .info_container{
+	width: 90%;
+
+	display: flex;
+	flex-direction: column;
+	gap: 6px;
+}
+
+.device img{
+	display: none;
+
+	width: 1.5rem;
+	height: 1.5rem;
+}
+
+.device .info{
+	width: 100%;
+
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.device .info>h4{
+	margin: 0;
+}
+
+.device .info.state{
+	text-transform: capitalize;
+}
+
+.device .online{
+	color: green;
+}
+
+.device .offline{
+	color: red;
+}
+
+.device .icon{
+	display: inline-block;
+
+	box-sizing: border-box;
+	border: 1px solid var(--menu_selected);
+	border-radius: 12px;
+
+	width: 12px;
+	height: 12px;
+}
+
+.device .icon.online{
+	background-color: green;
+}
+
+.device .icon.offline{
+	background-color: red;
+}
+
+.device .button{
+	width: 85%;
+}
+
+.clickable{
+	border: 3px dashed var(--menu_unselected);
+	color: var(--menu_unselected);
+
+	justify-content: flex-start;
+	gap: 20px;
+}
+
+.clickable:hover{
+	border-color: var(--menu_selected);
+	color: var(--menu_selected);
+
+	cursor: pointer;
+}
+
+.clickable p{
+	margin: 0;
+	font-size: 8rem;
+}
+
+.clickable div{
+	font-size: 1.5rem;
+}
+
+.back{
+	gap: 40px;
+}
+
+.back p{
+	font-size: 6rem;
+}
+
+.loading{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+#loading{
+	width: 4rem;
+	height: 2rem;
+
+	background-image: url("/img/loading.gif");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+}
+
+/* Media Queries */
+
+@media screen and (max-width: 720px){
+	.container{
+		flex-wrap: nowrap;
+		flex-direction: column;
+		justify-content: center;
+	}
+}

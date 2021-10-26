@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="it">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<link rel="stylesheet" href="/css/ui.css">
+		<link rel="stylesheet" href="/css/index.css">
+
+		<script src="/js/jquery-3.6.0.js"></script>
+		<script src="/js/ui.js"></script>
+		<script src="/js/index.js"></script>
+
+		<title> Configurazione PowerMonitor </title>
+	</head>
+
+	<body>
+		<div class="container">
+			<h1 class="title"> Configurazioni </h1>
+
+			<div class="data">
+				<div class="key" style="grid-area: name-key;">
+					<h3>Nome disp.: </h3>
+				</div>
+
+				<div class="val" style="grid-area: name-val;">
+					<input type="text" id="name">
+				</div>
+
+				<div class="key" style="grid-area: ssid-key;">
+					<h3>SSID: </h3>
+				</div>
+	
+				<div class="val" style="grid-area: ssid-val;">
+					<input type="text" id="ssid">
+				</div>
+	
+				<div class="key" style="grid-area: pass-key;">
+					<h3>Password: </h3>
+				</div>
+	
+				<div class="val" style="grid-area: pass-val;">
+					<input type="password" id="pass">
+				</div>
+				
+				<div style="grid-area: reset;">
+					<div class="button" id="reset"> Reset </div>
+				</div>
+	
+				<div style="grid-area: submit;">
+					<div class="button setWiFi" id="submit"> Connetti </div>
+				</div>
+
+				<div style="grid-area: update-fs;">
+					<div class="button" id="update-fs"> Agg. FS </div>
+				</div>
+
+				<div style="grid-area: update-fw;">
+					<div class="button" id="update-fw"> Agg. FW </div>
+				</div>
+			</div>
+
+			<div class="wifi-scan">
+				<h3 id="wifi-list"> Reti trovate </h3>
+
+				<div class="loading">
+					<div id="loading"></div>
+				</div>
+
+				<div class="button" id="refresh"> Aggiorna </div>
+			</div>
+		</div>
+	</body>
+</html>

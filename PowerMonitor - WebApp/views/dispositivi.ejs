@@ -1,0 +1,48 @@
+<%- include("header") %>
+
+<div id="template_device" style="display: none;">
+	<h3 class="title"></h3>
+
+	<div class="info_container">
+		<div class="ip info"> <h4>Indirizzo IP:</h4> <a target="_blank"></a> </div>
+		<div class="state info"> <h4>Stato:</h4> <span> <div class="icon"></div> </span> </div>
+	</div>
+
+	<div class="button"> Aggiungi dispositivo </div>
+</div>
+
+<div class="new_device clickable">
+	<p> + </p>
+	<div> Aggiungi dispositivo </div>
+</div>
+
+<div class="back clickable">
+	<p> ❮ </p>
+	<div> Indietro </div>
+</div>
+
+<div class="loading">
+	Ricerca in corso... <div id="loading"></div>
+</div>
+
+<% devices.forEach(e => { %>
+	<div class="device" id="device_<%= e.id %>">
+		<h3 class="title"><%= e.name %><img src="/img/pencil.png"></h3>
+
+		<div class="info_container">
+			<div class="ip info"> <h4>Indirizzo IP:</h4> <a href="http://<%= e.ip %>" target="_blank"><%= e.ip %></a> <img src="/img/pencil.png"> </div>
+			<div class="state info"> <h4>Stato:</h4> <span class="offline"> offline <div class="icon offline"></div> </span> </div>
+		</div>
+
+		<div class="switch">
+			<div class="body <%= selected_device == e.id ? "switch_enabled" : "" %>" onclick="select_device('<%= e.id %>')">
+				<div class="ball"></div>
+			</div>
+			<div class="title"> Seleziona dispositivo </div>
+		</div>
+
+		<div class="button" onclick="delete_device('<%= e.id %>')"> Elimina dispositivo </div>
+	</div>
+<% }) %>
+
+<%- include("footer") %>

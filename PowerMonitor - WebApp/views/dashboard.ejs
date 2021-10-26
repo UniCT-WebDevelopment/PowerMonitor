@@ -1,0 +1,57 @@
+<%- include("header") %>
+
+<script>
+	const MQTT_SERVER = "<%= MQTT_SERVER %>";
+	const REQUEST_TOPIC = "<%= REQUEST_TOPIC %>";
+	const DATA_TOPIC = "<%= DATA_TOPIC %>";
+	const POWER_TOPIC = "<%= POWER_TOPIC %>";
+
+	const device = <%- JSON.stringify(device) %>;
+</script>
+
+<div class="monitor">
+	<div class="screen">
+		<div class="value" id="Vrms">0.0</div>
+		<div class="unit">Vrms</div>
+		<div class="value" id="Irms">0.000</div>
+		<div class="unit">Irms</div>
+		<div class="value" id="VA">0.00</div>
+		<div class="unit">VA</div>
+		<div class="value" id="W">0.00</div>
+		<div class="unit">W</div>
+		<div class="value" id="VAr">0.00</div>
+		<div class="unit">VAr</div>
+		<div class="value" id="pf">0.000</div>
+		<div class="unit">pf</div>
+		<div class="value" id="kWh">0.00</div>
+		<div class="unit">kWh</div>
+		<div class="value" id="t">00:00:00</div>
+		<div class="unit">t</div>
+	</div>
+</div>
+
+<div class="controls_container">
+	<div class="switch" id="power_switch">
+		<div class="body">
+			<div class="ball"></div>
+		</div>
+		<div class="title"> Power </div>
+	</div>
+
+	<div class="switch" id="pause_switch">
+		<div class="body">
+			<div class="ball"></div>
+		</div>
+		<div class="title"> Pausa </div>
+	</div>
+
+	<div class="button" id="clear_button"> Pulisci </div>
+</div>
+
+<% Array("power", "pf", "vi").forEach(e => { %>
+	<div class="chart_container">
+		<canvas id="<%= e %>_chart"></canvas>
+	</div>
+<% }) %>
+
+<%- include("footer") %>

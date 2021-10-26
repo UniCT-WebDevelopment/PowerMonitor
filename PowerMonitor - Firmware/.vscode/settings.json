@@ -1,0 +1,21 @@
+{
+	"liveServer.settings.root": "/.pio/build/nodemcuv2",
+	// "liveServer.settings.root": "/data/public",
+	"files.associations": {
+		"array": "cpp",
+		"string": "cpp",
+		"string_view": "cpp",
+		"ranges": "cpp",
+		"random": "cpp",
+		"cmath": "cpp",
+		"deque": "cpp",
+		"list": "cpp",
+		"unordered_map": "cpp",
+		"vector": "cpp",
+		"initializer_list": "cpp",
+		"regex": "cpp",
+		"*.tcc": "cpp",
+		"system_error": "cpp",
+		"typeinfo": "cpp"
+	}
+}

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+	<html lang="it">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<link rel="stylesheet" href="/css/common.css">
+		<link rel="stylesheet" href="/css/ui.css">
+
+		<% if (typeof css !== "undefined") { %>
+			<% css.forEach(e => { %>
+				<link rel="stylesheet" href="<%= e %>">
+			<% }) %>
+		<% } %>
+		
+		<script src="/js/jquery-3.6.0.js"></script>
+		<script src="/js/common.js"></script>
+		<script src="/js/ui.js"></script>
+
+		<% if (typeof js !== "undefined") { %>
+			<% js.forEach(e => { %>
+				<script src="<%= e %>"></script>
+			<% }) %>
+		<% } %>
+
+		<title> <%= title %> </title>
+	</head>
+
+	<body>
+		<div class="main">
+			<div class="header">
+				<div class="title"> <%= header_text %> </div>
+
+				<div class="options">
+					<% Array("dispositivi", "dashboard", "consumi").forEach((e, i) => { %>
+						<a href="/<%= e %>" id="<%= e %>" class="<%= menu_select == i ? "selected" : "" %> "><%= e %></a>
+					<% }) %>
+				</div>
+
+				<div class="spacer"></div>
+			</div>
+
+			<div class="container">

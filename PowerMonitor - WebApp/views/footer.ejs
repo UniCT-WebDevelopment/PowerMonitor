@@ -1,0 +1,18 @@
+			</div>
+			
+			<div class="footer"> <%= footer_text %> </div>
+		</div>
+
+		<% if (typeof code !== "undefined") { %>
+			<script>
+				//Stampa di eventuali errori lato server.
+
+				switch(parseInt("<%= code %>")){
+					case 1:
+						alert("Il dispositivo selezionato non esiste; selezionane uno valido per poter visionare la sua dashboard.");
+						break;
+				}
+			</script>
+		<% } %>
+	</body>
+</html>
